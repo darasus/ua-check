@@ -26,6 +26,7 @@ export default function Code() {
     <main className="flex">
       <div className="w-full">
         <div className="flex flex-col gap-4 p-4">
+          <PreviewCode>{`UA: ${window.navigator.userAgent}`}</PreviewCode>
           {items.map(([name, f], index) => {
             const data = f();
 
