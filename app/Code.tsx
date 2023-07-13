@@ -2,6 +2,15 @@
 
 import { ReactNode } from "react";
 import { UAParser } from "ua-parser-js";
+import {
+  isWebView,
+  isAndroid,
+  isAndroidWebView,
+  isChrome,
+  isIos,
+  isIosWebView,
+  isMobileSafari,
+} from "./parseUserAgent";
 
 function PreviewCode({ children }: { children: ReactNode }) {
   return <code className="font-mono border rounded-md p-4">{children}</code>;
@@ -15,6 +24,13 @@ export default function Code() {
   );
 
   const items = [
+    ["isWebView", () => isWebView],
+    ["isIosWebView", () => isIosWebView],
+    ["isAndroidWebView", () => isAndroidWebView],
+    ["isAndroid", () => isAndroid],
+    ["isChrome", () => isChrome],
+    ["isIos", () => isIos],
+    ["isMobileSafari", () => isMobileSafari],
     ["getBrowser", getBrowser],
     ["getDevice", getDevice],
     ["getCPU", getCPU],
